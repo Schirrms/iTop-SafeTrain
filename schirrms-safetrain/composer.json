@@ -1,0 +1,16 @@
+{
+  "config": {
+    "classmap-authoritative": true
+  },
+  "autoload": {
+    "psr-4": {
+      "Schirrms\\iTop\\Extension\\": "src"
+    }
+  },
+  "name": "schirrms/schirrms-safetrain",
+  "type": "itop-extension",
+  "description": "Add a 'SAFe Train' field to Functional CIs",
+  "require": {
+    "composer-runtime-api": "^2.0"
+  }
+}

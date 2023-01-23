@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.7">
+  <constants>
+  </constants>
+  <classes>
+	  <class id="FunctionalCI" _delta="must_exist">
+      <field id="s_train" xsi:type="AttributeTagSet" _delta="define">
+        <sql>s_train</sql>
+        <is_null_allowed>true</is_null_allowed>
+        <max_items>7</max_items>
+        <tag_code_max_len>20</tag_code_max_len>
+        <tracking_level>all</tracking_level>
+      </field>
+		</class>
+		<class id="VirtualMachine" _delta="must_exist">
+		  <presentation>
+				<detail>
+					<items>
+						<item id="col:col2">
+							<items>
+								<item id="fieldset:Server:otherinfo">
+									<items>
+										<item id="s_train" _delta="define">
+											<rank>5</rank>
+										</item>
+									</items>
+								</item>
+							</items>
+						</item>
+					</items>
+				</detail>
+				<search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>5</rank>
+						</item>
+					</items>
+				</search>
+				<default_search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>5</rank>
+						</item>
+					</items>
+				</default_search>
+				<list>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>5</rank>
+						</item>
+					</items>
+				</list>
+			</presentation>
+		</class>
+  </classes>
+  <menus>
+  </menus>
+  <user_rights>
+    <groups>
+    </groups>
+    <profiles>
+    </profiles>
+  </user_rights>
+</itop_design>
