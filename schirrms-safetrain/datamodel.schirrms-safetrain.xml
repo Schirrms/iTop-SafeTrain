@@ -13,6 +13,29 @@
         	<tracking_level>all</tracking_level>
       	</field>
 			</fields>
+			<presentation>
+				<search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</search>
+				<default_search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</default_search>
+				<list>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</list>
+			</presentation>
 		</class>
 		<class id="VirtualMachine" _delta="must_exist">
 		  <presentation>
@@ -34,21 +57,21 @@
 				<search>
 					<items>
 						<item id="s_train" _delta="define">
-							<rank>5</rank>
+							<rank>51</rank>
 						</item>
 					</items>
 				</search>
 				<default_search>
 					<items>
 						<item id="s_train" _delta="define">
-							<rank>5</rank>
+							<rank>51</rank>
 						</item>
 					</items>
 				</default_search>
 				<list>
 					<items>
 						<item id="s_train" _delta="define">
-							<rank>5</rank>
+							<rank>51</rank>
 						</item>
 					</items>
 				</list>
