@@ -16,7 +16,9 @@ SetupWebPage::AddModule(
 		//
 		'dependencies' => array(
 			'itop-config-mgmt/2.7.0',
-			'itop-virtualization-mgmt/2.7.0'
+			'itop-virtualization-mgmt/2.7.0',
+			'itop-storage-mgmt/2.7.0',
+			'schirrms-generic-connection/0.8.0'
 		),
 		'mandatory' => false,
 		'visible' => true,

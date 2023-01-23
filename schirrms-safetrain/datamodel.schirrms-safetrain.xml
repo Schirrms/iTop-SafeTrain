@@ -77,6 +77,166 @@
 				</list>
 			</presentation>
 		</class>
+		<class id="Server" _delta="must_exist">
+		  <presentation>
+				<details>
+					<items>
+						<item id="col:col2">
+							<items>
+								<item id="fieldset:Server:otherinfo">
+									<items>
+										<item id="s_train" _delta="define">
+											<rank>5</rank>
+										</item>
+									</items>
+								</item>
+							</items>
+						</item>
+					</items>
+				</details>
+				<search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</search>
+				<default_search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</default_search>
+				<list>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</list>
+			</presentation>
+		</class>
+		<class id="StorageSystem" _delta="must_exist">
+		  <presentation>
+				<details>
+					<items>
+						<item id="col:col2">
+							<items>
+								<item id="fieldset:Server:otherinfo">
+									<items>
+										<item id="s_train" _delta="define">
+											<rank>5</rank>
+										</item>
+									</items>
+								</item>
+							</items>
+						</item>
+					</items>
+				</details>
+				<search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</search>
+				<default_search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</default_search>
+				<list>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</list>
+			</presentation>
+		</class>
+		<class id="GenericCommDevice" _delta="must_exist">
+		  <presentation>
+				<details>
+					<items>
+						<item id="col:col2">
+							<items>
+								<item id="fieldset:Server:otherinfo">
+									<items>
+										<item id="s_train" _delta="define">
+											<rank>5</rank>
+										</item>
+									</items>
+								</item>
+							</items>
+						</item>
+					</items>
+				</details>
+				<search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</search>
+				<default_search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</default_search>
+				<list>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</list>
+			</presentation>
+		</class>
+		<class id="NAS" _delta="must_exist">
+		  <presentation>
+				<details>
+					<items>
+						<item id="col:col2">
+							<items>
+								<item id="fieldset:Server:otherinfo">
+									<items>
+										<item id="s_train" _delta="define">
+											<rank>5</rank>
+										</item>
+									</items>
+								</item>
+							</items>
+						</item>
+					</items>
+				</details>
+				<search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</search>
+				<default_search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</default_search>
+				<list>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</list>
+			</presentation>
+		</class>
   </classes>
   <menus>
   </menus>
