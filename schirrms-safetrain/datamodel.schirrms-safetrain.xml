@@ -16,7 +16,7 @@
 		</class>
 		<class id="VirtualMachine" _delta="must_exist">
 		  <presentation>
-				<detail>
+				<details>
 					<items>
 						<item id="col:col2">
 							<items>
@@ -30,7 +30,7 @@
 							</items>
 						</item>
 					</items>
-				</detail>
+				</details>
 				<search>
 					<items>
 						<item id="s_train" _delta="define">
