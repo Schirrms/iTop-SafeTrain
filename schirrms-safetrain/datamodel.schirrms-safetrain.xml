@@ -437,6 +437,7 @@
 				</list>
 			</presentation>
 		</class>
+		<!-- Un Projet n'est pas un CI fonctionnel...
 		<class id="Project" _delta="must_exist">
 		  <presentation>
 				<details>
@@ -469,6 +470,7 @@
 				</list>
 			</presentation>
 		</class>
+		-->
 		<class id="Server" _delta="must_exist">
 		  <presentation>
 				<details>
