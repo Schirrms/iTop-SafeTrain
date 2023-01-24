@@ -37,7 +37,167 @@
 				</list>
 			</presentation>
 		</class>
-		<class id="VirtualMachine" _delta="must_exist">
+		<class id="ApplicationSolution" _delta="must_exist">
+		  <presentation>
+				<details>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>22</rank>
+						</item>
+					</items>
+				</details>
+				<search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</search>
+				<default_search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</default_search>
+				<list>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</list>
+			</presentation>
+		</class>
+		<class id="BusinessProcess" _delta="must_exist">
+		  <presentation>
+				<details>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>22</rank>
+						</item>
+					</items>
+				</details>
+				<search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</search>
+				<default_search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</default_search>
+				<list>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</list>
+			</presentation>
+		</class>
+		<class id="DatabaseSchema" _delta="must_exist">
+		  <presentation>
+				<details>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>22</rank>
+						</item>
+					</items>
+				</details>
+				<search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</search>
+				<default_search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</default_search>
+				<list>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</list>
+			</presentation>
+		</class>
+		<class id="DBServer" _delta="must_exist">
+		  <presentation>
+				<details>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>22</rank>
+						</item>
+					</items>
+				</details>
+				<search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</search>
+				<default_search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</default_search>
+				<list>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</list>
+			</presentation>
+		</class>
+		<class id="Farm" _delta="must_exist">
+		  <presentation>
+				<details>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>22</rank>
+						</item>
+					</items>
+				</details>
+				<search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</search>
+				<default_search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</default_search>
+				<list>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</list>
+			</presentation>
+		</class>
+		<class id="GenericCommDevice" _delta="must_exist">
 		  <presentation>
 				<details>
 					<items>
@@ -51,6 +211,238 @@
 									</items>
 								</item>
 							</items>
+						</item>
+					</items>
+				</details>
+				<search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</search>
+				<default_search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</default_search>
+				<list>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</list>
+			</presentation>
+		</class>
+		<class id="Hypervisor" _delta="must_exist">
+		  <presentation>
+				<details>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>22</rank>
+						</item>
+					</items>
+				</details>
+				<search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</search>
+				<default_search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</default_search>
+				<list>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</list>
+			</presentation>
+		</class>
+		<class id="LoadBalancer" _delta="must_exist">
+		  <presentation>
+				<details>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>22</rank>
+						</item>
+					</items>
+				</details>
+				<search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</search>
+				<default_search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</default_search>
+				<list>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</list>
+			</presentation>
+		</class>
+		<class id="Middleware" _delta="must_exist">
+		  <presentation>
+				<details>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>22</rank>
+						</item>
+					</items>
+				</details>
+				<search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</search>
+				<default_search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</default_search>
+				<list>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</list>
+			</presentation>
+		</class>
+		<class id="MiddlewareInstance" _delta="must_exist">
+		  <presentation>
+				<details>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>22</rank>
+						</item>
+					</items>
+				</details>
+				<search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</search>
+				<default_search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</default_search>
+				<list>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</list>
+			</presentation>
+		</class>
+		<class id="NAS" _delta="must_exist">
+		  <presentation>
+				<details>
+					<items>
+						<item id="col:col2">
+							<items>
+								<item id="fieldset:Server:otherinfo">
+									<items>
+										<item id="s_train" _delta="define">
+											<rank>5</rank>
+										</item>
+									</items>
+								</item>
+							</items>
+						</item>
+					</items>
+				</details>
+				<search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</search>
+				<default_search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</default_search>
+				<list>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</list>
+			</presentation>
+		</class>
+		<class id="OtherSoftware" _delta="must_exist">
+		  <presentation>
+				<details>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>22</rank>
+						</item>
+					</items>
+				</details>
+				<search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</search>
+				<default_search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</default_search>
+				<list>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</list>
+			</presentation>
+		</class>
+		<class id="Project" _delta="must_exist">
+		  <presentation>
+				<details>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>22</rank>
 						</item>
 					</items>
 				</details>
@@ -157,86 +549,6 @@
 				</list>
 			</presentation>
 		</class>
-		<class id="GenericCommDevice" _delta="must_exist">
-		  <presentation>
-				<details>
-					<items>
-						<item id="col:col2">
-							<items>
-								<item id="fieldset:Server:otherinfo">
-									<items>
-										<item id="s_train" _delta="define">
-											<rank>5</rank>
-										</item>
-									</items>
-								</item>
-							</items>
-						</item>
-					</items>
-				</details>
-				<search>
-					<items>
-						<item id="s_train" _delta="define">
-							<rank>51</rank>
-						</item>
-					</items>
-				</search>
-				<default_search>
-					<items>
-						<item id="s_train" _delta="define">
-							<rank>51</rank>
-						</item>
-					</items>
-				</default_search>
-				<list>
-					<items>
-						<item id="s_train" _delta="define">
-							<rank>51</rank>
-						</item>
-					</items>
-				</list>
-			</presentation>
-		</class>
-		<class id="NAS" _delta="must_exist">
-		  <presentation>
-				<details>
-					<items>
-						<item id="col:col2">
-							<items>
-								<item id="fieldset:Server:otherinfo">
-									<items>
-										<item id="s_train" _delta="define">
-											<rank>5</rank>
-										</item>
-									</items>
-								</item>
-							</items>
-						</item>
-					</items>
-				</details>
-				<search>
-					<items>
-						<item id="s_train" _delta="define">
-							<rank>51</rank>
-						</item>
-					</items>
-				</search>
-				<default_search>
-					<items>
-						<item id="s_train" _delta="define">
-							<rank>51</rank>
-						</item>
-					</items>
-				</default_search>
-				<list>
-					<items>
-						<item id="s_train" _delta="define">
-							<rank>51</rank>
-						</item>
-					</items>
-				</list>
-			</presentation>
-		</class>
 		<class id="TapeLibrary" _delta="must_exist">
 		  <presentation>
 				<details>
@@ -277,7 +589,47 @@
 				</list>
 			</presentation>
 		</class>
-		<class id="Farm" _delta="must_exist">
+		<class id="VirtualMachine" _delta="must_exist">
+		  <presentation>
+				<details>
+					<items>
+						<item id="col:col2">
+							<items>
+								<item id="fieldset:Server:otherinfo">
+									<items>
+										<item id="s_train" _delta="define">
+											<rank>5</rank>
+										</item>
+									</items>
+								</item>
+							</items>
+						</item>
+					</items>
+				</details>
+				<search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</search>
+				<default_search>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</default_search>
+				<list>
+					<items>
+						<item id="s_train" _delta="define">
+							<rank>51</rank>
+						</item>
+					</items>
+				</list>
+			</presentation>
+		</class>
+		<class id="WebApplication" _delta="must_exist">
 		  <presentation>
 				<details>
 					<items>
@@ -309,7 +661,7 @@
 				</list>
 			</presentation>
 		</class>
-		<class id="Hypervisor" _delta="must_exist">
+		<class id="WebProxy" _delta="must_exist">
 		  <presentation>
 				<details>
 					<items>
@@ -341,7 +693,7 @@
 				</list>
 			</presentation>
 		</class>
-		<class id="Middleware" _delta="must_exist">
+		<class id="WebServer" _delta="must_exist">
 		  <presentation>
 				<details>
 					<items>

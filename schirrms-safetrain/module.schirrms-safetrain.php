@@ -18,7 +18,10 @@ SetupWebPage::AddModule(
 			'itop-config-mgmt/2.7.0',
 			'itop-virtualization-mgmt/2.7.0',
 			'itop-storage-mgmt/2.7.0',
-			'schirrms-generic-connection/0.8.0'
+			'schirrms-generic-connection/0.8.0',
+			'schirrms-middleware-web-extension/0.2.0',
+			'schirrms-loadbalancer/0.0.1',
+			'schirrms-project-class/0.2.1'
 		),
 		'mandatory' => false,
 		'visible' => true,
