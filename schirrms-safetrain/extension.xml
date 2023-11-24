@@ -3,7 +3,7 @@
   <extension_code>schirrms-safetrain</extension_code>
   <version>0.1.0</version>
   <label><![CDATA[Add a 'SAFe Train' field to Functional CIs And a 'Train' Class]]></label>
-  <description><![CDATA[Adds a 'SAFe Train' Tag to FunctionalCI, allowing a CI to be member of several Train]]></description>
+  <description><![CDATA[Adds a 'SAFe Train' Tag to FunctionalCI, allowing a CI to be member of several Trains]]></description>
   <mandatory>false</mandatory>
   <more_info_url></more_info_url>
 </extension>

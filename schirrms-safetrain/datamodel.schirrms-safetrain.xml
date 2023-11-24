@@ -95,7 +95,8 @@
               <cell id="0">
                 <rank>0</rank>
                 <dashlets>
-                  <dashlet id="CUSTOM_SafeTrain__VMObsolescencedashboard_ID_row3_col0_17" xsi:type="DashletObjectList">
+                  <dashlet id="CUSTOM_SafeTrain__VMObsolescencedashboard_ID_row3_col0_17"
+                    xsi:type="DashletObjectList">
                     <rank>0</rank>
                     <title>Listes des CI du train</title>
                     <query>SELECT FunctionalCI WHERE s_train MATCHES :this-&gt;s_train</query>
@@ -132,16 +133,17 @@
                     <title>Parc de VMs</title>
                     <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
                     <subtitle>Total</subtitle>
-                    <query>SELECT VirtualMachine WHERE status = 'production' AND (power_status =
-                      'poweredOn' OR power_status = '') AND istemplate = '0' AND s_train MATCHES :this-&gt;s_train</query>
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND s_train MATCHES :this-&gt;s_train</query>
                     <group_by>osfamily_id</group_by>
                     <values>9,154,40</values>
                   </dashlet>
                   <dashlet id="EOL_VM_Dash_ID_row0_col0_1" xsi:type="DashletGroupByPie">
                     <rank>1</rank>
                     <title>Parc de machine virtuelles</title>
-                    <query>SELECT VirtualMachine WHERE status = 'production' AND (power_status =
-                      'poweredOn' OR power_status = '') AND istemplate = '0' AND s_train MATCHES :this-&gt;s_train</query>
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND s_train MATCHES
+                      :this-&gt;s_train</query>
                     <group_by>osfamily_id</group_by>
                     <style>pie</style>
                     <aggregation_function>count</aggregation_function>
@@ -160,8 +162,8 @@
                     <title>VMs avec OS Obsol&#xE8;te</title>
                     <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
                     <subtitle>Total</subtitle>
-                    <query>SELECT VirtualMachine WHERE status = 'production' AND (power_status =
-                      'poweredOn' OR power_status = '') AND istemplate = '0' AND osversion_eol &lt;
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND osversion_eol &lt;
                       DATE(NOW()) AND s_train MATCHES :this-&gt;s_train</query>
                     <group_by>osfamily_id</group_by>
                     <values>9,154,40</values>
@@ -169,8 +171,8 @@
                   <dashlet id="EOL_VM_Dash_ID_row1_col0_2" xsi:type="DashletGroupByPie">
                     <rank>1</rank>
                     <title>VMs avec OS Obsol&#xE8;te</title>
-                    <query>SELECT VirtualMachine WHERE status = 'production' AND (power_status =
-                      'poweredOn' OR power_status = '') AND istemplate = '0' AND osversion_eol &lt;
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND osversion_eol &lt;
                       DATE(NOW()) AND s_train MATCHES :this-&gt;s_train</query>
                     <group_by>osfamily_id</group_by>
                     <style>pie</style>
@@ -190,8 +192,8 @@
                     <title>VMs avec OS Obsol&#xE8;te dans un an</title>
                     <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
                     <subtitle>Total</subtitle>
-                    <query>SELECT VirtualMachine WHERE status = 'production' AND (power_status =
-                      'poweredOn' OR power_status = '') AND istemplate = '0' AND osversion_eol &lt;
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND osversion_eol &lt;
                       DATE(DATE_ADD(NOW(), INTERVAL 1 YEAR)) AND s_train MATCHES :this-&gt;s_train</query>
                     <group_by>osfamily_id</group_by>
                     <values>9,154,40</values>
@@ -199,8 +201,8 @@
                   <dashlet id="EOL_VM_Dash_ID_row0_col2_3" xsi:type="DashletGroupByPie">
                     <rank>1</rank>
                     <title>VMs avec OS Obsol&#xE8;te dans un an</title>
-                    <query>SELECT VirtualMachine WHERE status = 'production' AND (power_status =
-                      'poweredOn' OR power_status = '') AND istemplate = '0' AND osversion_eol &lt;
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND osversion_eol &lt;
                       DATE(DATE_ADD(NOW(), INTERVAL 1 YEAR)) AND s_train MATCHES :this-&gt;s_train</query>
                     <group_by>osfamily_id</group_by>
                     <style>pie</style>
@@ -220,8 +222,8 @@
                     <title>VM RedHat</title>
                     <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
                     <subtitle>Total</subtitle>
-                    <query>SELECT VirtualMachine WHERE status = 'production' AND (power_status =
-                      'poweredOn' OR power_status = '') AND istemplate = '0' AND osfamily_id = 9
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND osfamily_id = 9
                       AND s_train MATCHES :this-&gt;s_train</query>
                     <group_by>osversion_id</group_by>
                     <values>86,83,24,10,82,254,598</values>
@@ -229,8 +231,8 @@
                   <dashlet id="EOL_VM_Dash_ID_row1_col0_4" xsi:type="DashletGroupByPie">
                     <rank>1</rank>
                     <title>Parc de VM RedHat</title>
-                    <query>SELECT VirtualMachine WHERE status = 'production' AND (power_status =
-                      'poweredOn' OR power_status = '') AND istemplate = '0' AND osfamily_id = 9
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND osfamily_id = 9
                       AND s_train MATCHES :this-&gt;s_train</query>
                     <group_by>osversion_id</group_by>
                     <style>pie</style>
@@ -250,8 +252,8 @@
                     <title>VM RedHat obsol&#xE8;tes</title>
                     <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
                     <subtitle>Total</subtitle>
-                    <query>SELECT VirtualMachine WHERE status = 'production' AND (power_status =
-                      'poweredOn' OR power_status = '') AND istemplate = '0' AND osversion_eol &lt;
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND osversion_eol &lt;
                       DATE(NOW()) AND osfamily_id = 9 AND s_train MATCHES :this-&gt;s_train</query>
                     <group_by>osversion_id</group_by>
                     <values>86,83,24,10,82,254,598</values>
@@ -259,9 +261,9 @@
                   <dashlet id="EOL_VM_Dash_ID_row1_col1_5" xsi:type="DashletGroupByPie">
                     <rank>1</rank>
                     <title>VMs RedHat avec OS Obsol&#xE8;te</title>
-                    <query>SELECT VirtualMachine WHERE status = 'production' AND (power_status =
-                      'poweredOn' OR power_status = '') AND istemplate = '0' AND osversion_eol &lt;
-                      DATE(NOW()) AND osfamily_id = 9  AND s_train MATCHES :this-&gt;s_train</query>
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND osversion_eol &lt;
+                      DATE(NOW()) AND osfamily_id = 9 AND s_train MATCHES :this-&gt;s_train</query>
                     <group_by>osversion_id</group_by>
                     <style>pie</style>
                     <aggregation_function>count</aggregation_function>
@@ -280,8 +282,8 @@
                     <title>VM RedHat obsol&#xE8;tes dans un an</title>
                     <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
                     <subtitle>Total</subtitle>
-                    <query>SELECT VirtualMachine WHERE status = 'production' AND (power_status =
-                      'poweredOn' OR power_status = '') AND istemplate = '0' AND osversion_eol &lt;
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND osversion_eol &lt;
                       DATE(DATE_ADD(NOW(), INTERVAL 1 YEAR)) AND osfamily_id = 9
                       AND s_train MATCHES :this-&gt;s_train</query>
                     <group_by>osversion_id</group_by>
@@ -290,8 +292,8 @@
                   <dashlet id="EOL_VM_Dash_ID_row1_col2_6" xsi:type="DashletGroupByPie">
                     <rank>1</rank>
                     <title>VMs RedHat avec OS Obsol&#xE8;te dans un an</title>
-                    <query>SELECT VirtualMachine WHERE status = 'production' AND (power_status =
-                      'poweredOn' OR power_status = '') AND istemplate = '0' AND osversion_eol &lt;
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND osversion_eol &lt;
                       DATE(DATE_ADD(NOW(), INTERVAL 1 YEAR)) AND osfamily_id = 9
                       AND s_train MATCHES :this-&gt;s_train</query>
                     <group_by>osversion_id</group_by>
@@ -312,8 +314,8 @@
                     <title>VMs Windows</title>
                     <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
                     <subtitle>Total</subtitle>
-                    <query>SELECT VirtualMachine WHERE status = 'production' AND (power_status =
-                      'poweredOn' OR power_status = '') AND istemplate = '0' AND osfamily_id = 40
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND osfamily_id = 40
                       AND s_train MATCHES :this-&gt;s_train</query>
                     <group_by>osversion_id</group_by>
                     <values>383,403,382,120,119,117,477,567</values>
@@ -321,8 +323,8 @@
                   <dashlet id="EOL_VM_Dash_ID_row2_col0_7" xsi:type="DashletGroupByPie">
                     <rank>1</rank>
                     <title>Parc de VM Windows</title>
-                    <query>SELECT VirtualMachine WHERE status = 'production' AND (power_status =
-                      'poweredOn' OR power_status = '') AND istemplate = '0' AND osfamily_id = 40
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND osfamily_id = 40
                       AND s_train MATCHES :this-&gt;s_train</query>
                     <group_by>osversion_id</group_by>
                     <style>pie</style>
@@ -342,8 +344,8 @@
                     <title>VMs Windows avec OS Obsol&#xE8;te</title>
                     <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
                     <subtitle>Total</subtitle>
-                    <query>SELECT VirtualMachine WHERE status = 'production' AND (power_status =
-                      'poweredOn' OR power_status = '') AND istemplate = '0' AND osversion_eol &lt;
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND osversion_eol &lt;
                       DATE(NOW()) AND osfamily_id = 40 AND s_train MATCHES :this-&gt;s_train</query>
                     <group_by>osversion_id</group_by>
                     <values>383,403,382,120,119,117,477,567</values>
@@ -351,8 +353,8 @@
                   <dashlet id="EOL_VM_Dash_ID_row2_col1_8" xsi:type="DashletGroupByPie">
                     <rank>1</rank>
                     <title>VMs Windows avec OS Obsol&#xE8;te</title>
-                    <query>SELECT VirtualMachine WHERE status = 'production' AND (power_status =
-                      'poweredOn' OR power_status = '') AND istemplate = '0' AND osversion_eol &lt;
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND osversion_eol &lt;
                       DATE(NOW()) AND osfamily_id = 40 AND s_train MATCHES :this-&gt;s_train</query>
                     <group_by>osversion_id</group_by>
                     <style>pie</style>
@@ -372,8 +374,8 @@
                     <title>VMs Windows avec OS Obsol&#xE8;te dans un an</title>
                     <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
                     <subtitle>Total</subtitle>
-                    <query>SELECT VirtualMachine WHERE status = 'production' AND (power_status =
-                      'poweredOn' OR power_status = '') AND istemplate = '0' AND osversion_eol &lt;
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND osversion_eol &lt;
                       DATE(DATE_ADD(NOW(), INTERVAL 1 YEAR)) AND osfamily_id = 40
                       AND s_train MATCHES :this-&gt;s_train</query>
                     <group_by>osversion_id</group_by>
@@ -382,8 +384,8 @@
                   <dashlet id="EOL_VM_Dash_ID_row2_col2_9" xsi:type="DashletGroupByPie">
                     <rank>0</rank>
                     <title>VMs Windows avec OS Obsol&#xE8;te dans un an</title>
-                    <query>SELECT VirtualMachine WHERE status = 'production' AND (power_status =
-                      'poweredOn' OR power_status = '') AND istemplate = '0' AND osversion_eol &lt;
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND osversion_eol &lt;
                       DATE(DATE_ADD(NOW(), INTERVAL 1 YEAR)) AND osfamily_id = 40
                       AND s_train MATCHES :this-&gt;s_train</query>
                     <group_by>osversion_id</group_by>
@@ -454,16 +456,6 @@
             </item>
           </items>
         </search>
-        <default_search>
-          <items>
-            <item id="name">
-              <rank>10</rank>
-            </item>
-            <item id="s_train">
-              <rank>30</rank>
-            </item>
-          </items>
-        </default_search>
         <list>
           <items>
             <item id="name">
@@ -1174,7 +1166,7 @@
       <parent>WelcomeMenu</parent>
       <definition>
         <layout>DashboardLayoutOneCol</layout>
-        <title/>
+        <title />
         <cells>
           <cell id="0" _delta="must_exist">
             <rank>0</rank>
