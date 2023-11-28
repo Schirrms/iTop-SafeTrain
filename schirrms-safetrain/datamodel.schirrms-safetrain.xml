@@ -119,7 +119,7 @@
           <is_user_editable>false</is_user_editable>
           <definition>
             <layout>DashboardLayoutThreeCols</layout>
-            <title>Etat d'obolescence OS du parc de Machines Virtuelles pour ce train</title>
+            <title>Etat d'osbolescence OS du parc de Machines Virtuelles pour ce train</title>
             <auto_reload>
               <enabled>false</enabled>
               <interval>300</interval>
