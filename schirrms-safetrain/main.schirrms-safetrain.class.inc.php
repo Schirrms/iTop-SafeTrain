@@ -24,11 +24,17 @@ class SafeTrainTriggers implements iApplicationObjectExtension
 	}
 	public function OnDBUpdate($oObject, $oChange = null)
 	{
-		SafeTrainFunct::SafeTrainCount($oObject->Get('finalclass'), $oObject->GetKey());
+		if (($oObject instanceof FunctionalCI) === true) {
+			// SafeTrainFunct::SafeTrainCount($oObject->Get('finalclass'), $oObject->GetKey());
+			SafeTrainFunct::SafeTrainCount($oObject->GetKey());
+		}
 	}
 	public function OnDBInsert($oObject, $oChange = null)
 	{
-		SafeTrainFunct::SafeTrainCount($oObject->Get('finalclass'), $oObject->GetKey());
+		if (($oObject instanceof FunctionalCI) === true) {
+			// SafeTrainFunct::SafeTrainCount($oObject->Get('finalclass'), $oObject->GetKey());
+			SafeTrainFunct::SafeTrainCount($oObject->GetKey());
+		}
 	}
 	public function OnDBDelete($oObject, $oChange = null)
 	{
@@ -41,10 +47,11 @@ class SafeTrainFunct
 	 * Here are the real deal funct for this extension
 	 */
 
-	public static function SafeTrainCount($device_finalclass, $device_id)
+	// public static function SafeTrainCount($device_finalclass, $device_id)
+	public static function SafeTrainCount($device_id)
 	{
 		// get a link to the device
-		$oDevice = MetaModel::GetObject($device_finalclass, $device_id);
+		$oDevice = MetaModel::GetObject('FunctionalCI', $device_id);
 		if (is_object($oDevice)) {
 			$sSafeTrain = trim($oDevice->Get('s_train'));
 			// count the number of trains this CI belongs to
