@@ -406,21 +406,116 @@
               <cell id="9">
                 <rank>9</rank>
                 <dashlets>
-                  <dashlet id="0" xsi:type="DashletEmptyCell">
+                  <dashlet id="CUSTOM_VMObsolescence_ID_row3_col0_18"
+                    xsi:type="DashletHeaderDynamic">
                     <rank>0</rank>
+                    <title>Machines Virtuelles 'Multi-Train'</title>
+                    <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
+                    <subtitle>Total</subtitle>
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND s_train_count &gt; 1 AND s_train
+                      MATCHES :this-&gt;s_train</query>
+                    <group_by>s_train_count</group_by>
+                    <values>2,3,4,5,6,7</values>
+                  </dashlet>
+                  <dashlet id="CUSTOM_VMObsolescence_ID_row3_col0_17" xsi:type="DashletGroupByPie">
+                    <rank>1</rank>
+                    <title>Machines virtuelles 'Multi Trains'</title>
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND s_train_count &gt; 1 AND s_train
+                      MATCHES :this-&gt;s_train</query>
+                    <group_by>s_train_count</group_by>
+                    <style>pie</style>
+                    <aggregation_function>count</aggregation_function>
+                    <aggregation_attribute></aggregation_attribute>
+                    <limit></limit>
+                    <order_by>attribute</order_by>
+                    <order_direction>desc</order_direction>
                   </dashlet>
                 </dashlets>
               </cell>
               <cell id="10">
                 <rank>10</rank>
                 <dashlets>
-                  <dashlet id="0" xsi:type="DashletEmptyCell">
+                  <dashlet id="CUSTOM_VMObsolescence_ID_row3_col1_19"
+                    xsi:type="DashletHeaderDynamic">
                     <rank>0</rank>
+                    <title>Machines Virtuelles 'Multi-Train' OS Obsolète</title>
+                    <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
+                    <subtitle>Total</subtitle>
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND s_train_count &gt; 1 AND
+                      osversion_eol &lt; DATE(NOW()) AND s_train MATCHES :this-&gt;s_train</query>
+                    <group_by>s_train_count</group_by>
+                    <values>2,3,4,5,6,7</values>
+                  </dashlet>
+                  <dashlet id="CUSTOM_VMObsolescence_ID_row3_col1_20" xsi:type="DashletGroupByPie">
+                    <rank>1</rank>
+                    <title>Machines virtuelles 'Multi Trains' OS Obsolète</title>
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND s_train_count &gt; 1 AND
+                      osversion_eol &lt; DATE(NOW()) AND s_train MATCHES :this-&gt;s_train</query>
+                    <group_by>s_train_count</group_by>
+                    <style>pie</style>
+                    <aggregation_function>count</aggregation_function>
+                    <aggregation_attribute></aggregation_attribute>
+                    <limit></limit>
+                    <order_by>attribute</order_by>
+                    <order_direction>desc</order_direction>
                   </dashlet>
                 </dashlets>
               </cell>
               <cell id="11">
                 <rank>11</rank>
+                <dashlets>
+                  <dashlet id="CUSTOM_VMObsolescence_ID_row3_col2_21"
+                    xsi:type="DashletHeaderDynamic">
+                    <rank>0</rank>
+                    <title>Machines Virtuelles 'Multi-Train' OS Obsolète dans un an</title>
+                    <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
+                    <subtitle>Total</subtitle>
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND s_train_count &gt; 1 AND
+                      osversion_eol &lt; DATE(DATE_ADD(NOW(), INTERVAL 1 YEAR)) AND s_train MATCHES
+                      :this-&gt;s_train</query>
+                    <group_by>s_train_count</group_by>
+                    <values>2,3,4,5,6,7</values>
+                  </dashlet>
+                  <dashlet id="CUSTOM_VMObsolescence_ID_row3_col2_22" xsi:type="DashletGroupByPie">
+                    <rank>1</rank>
+                    <title>Machines virtuelles 'Multi Trains' OS Obsolète dans un an</title>
+                    <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
+                      ('poweredOn','') AND istemplate = '0' AND s_train_count &gt; 1 AND
+                      osversion_eol &lt; DATE(DATE_ADD(NOW(), INTERVAL 1 YEAR)) AND s_train MATCHES
+                      :this-&gt;s_train</query>
+                    <group_by>s_train_count</group_by>
+                    <style>pie</style>
+                    <aggregation_function>count</aggregation_function>
+                    <aggregation_attribute></aggregation_attribute>
+                    <limit></limit>
+                    <order_by>attribute</order_by>
+                    <order_direction>desc</order_direction>
+                  </dashlet>
+                </dashlets>
+              </cell>
+              <cell id="12">
+                <rank>12</rank>
+                <dashlets>
+                  <dashlet id="0" xsi:type="DashletEmptyCell">
+                    <rank>0</rank>
+                  </dashlet>
+                </dashlets>
+              </cell>
+              <cell id="13">
+                <rank>13</rank>
+                <dashlets>
+                  <dashlet id="0" xsi:type="DashletEmptyCell">
+                    <rank>0</rank>
+                  </dashlet>
+                </dashlets>
+              </cell>
+              <cell id="14">
+                <rank>14</rank>
                 <dashlets>
                   <dashlet id="0" xsi:type="DashletEmptyCell">
                     <rank>0</rank>
