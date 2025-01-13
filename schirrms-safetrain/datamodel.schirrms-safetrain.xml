@@ -91,7 +91,7 @@
           <is_user_editable>false</is_user_editable>
           <definition>
             <layout>DashboardLayoutOneCol</layout>
-            <title>Listes de CIs affectés à ce train</title>
+            <title/>
             <auto_reload>
               <enabled>false</enabled>
               <interval>300</interval>
@@ -100,20 +100,37 @@
               <cell id="0">
                 <rank>0</rank>
                 <dashlets>
-                  <dashlet id="CUSTOM_SafeTrain__VMObsolescencedashboard_ID_row3_col0_17"
-                    xsi:type="DashletObjectList">
+                  <dashlet id="1" xsi:type="DashletObjectList">
                     <rank>0</rank>
-                    <title>Listes des CI du train</title>
+                    <title>Class:SafeTrain/Attribute:TrainCIs/cell0</title>
                     <query>SELECT FunctionalCI WHERE s_train MATCHES :this-&gt;s_train</query>
                     <menu>true</menu>
                   </dashlet>
                 </dashlets>
               </cell>
-              <cell id="1">
-                <rank>1</rank>
+            </cells>
+          </definition>
+        </field>
+        <field id="TrainSoftwareInstance" xsi:type="AttributeDashboard">
+          <is_user_editable>false</is_user_editable>
+          <definition>
+            <layout>DashboardLayoutOneCol</layout>
+            <title/>
+            <auto_reload>
+              <enabled>false</enabled>
+              <interval>300</interval>
+            </auto_reload>
+            <cells xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+              <cell id="0">
+                <rank>0</rank>
                 <dashlets>
-                  <dashlet id="0" xsi:type="DashletEmptyCell">
+                  <dashlet id="1" xsi:type="DashletObjectList">
                     <rank>0</rank>
+                    <title>Class:SafeTrain/Attribute:TrainSoftwareInstance/cell0</title>
+                    <query>SELECT Software FROM SoftwareInstance AS Software 
+                           JOIN FunctionalCI AS CI ON Software.system_id = CI.id 
+                           WHERE CI.s_train MATCHES :this-&gt;s_train</query>
+                    <menu>true</menu>
                   </dashlet>
                 </dashlets>
               </cell>
@@ -124,7 +141,7 @@
           <is_user_editable>false</is_user_editable>
           <definition>
             <layout>DashboardLayoutThreeCols</layout>
-            <title>Etat d'osbolescence OS du parc de Machines Virtuelles pour ce train</title>
+            <title>Class:SafeTrain/Attribute:VMObsolescence/Title</title>
             <auto_reload>
               <enabled>false</enabled>
               <interval>300</interval>
@@ -133,9 +150,9 @@
               <cell id="0">
                 <rank>0</rank>
                 <dashlets>
-                  <dashlet id="EOL_VM_Dash_ID_row0_col0_11" xsi:type="DashletHeaderDynamic">
+                  <dashlet id="000" xsi:type="DashletHeaderDynamic">
                     <rank>0</rank>
-                    <title>Parc de VMs</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c0r0r0</title>
                     <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
                     <subtitle>Total</subtitle>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
@@ -143,9 +160,9 @@
                     <group_by>osfamily_id</group_by>
                     <values>9,154,40</values>
                   </dashlet>
-                  <dashlet id="EOL_VM_Dash_ID_row0_col0_1" xsi:type="DashletGroupByPie">
+                  <dashlet id="001" xsi:type="DashletGroupByPie">
                     <rank>1</rank>
-                    <title>Parc de machine virtuelles</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c0r0r1</title>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
                       ('poweredOn','') AND istemplate = '0' AND s_train MATCHES
                       :this-&gt;s_train</query>
@@ -162,9 +179,9 @@
               <cell id="1">
                 <rank>1</rank>
                 <dashlets>
-                  <dashlet id="EOL_VM_Dash_ID_row0_col1_10" xsi:type="DashletHeaderDynamic">
+                  <dashlet id="110" xsi:type="DashletHeaderDynamic">
                     <rank>0</rank>
-                    <title>VMs avec OS Obsol&#xE8;te</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c1r1r0</title>
                     <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
                     <subtitle>Total</subtitle>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
@@ -173,9 +190,9 @@
                     <group_by>osfamily_id</group_by>
                     <values>9,154,40</values>
                   </dashlet>
-                  <dashlet id="EOL_VM_Dash_ID_row1_col0_2" xsi:type="DashletGroupByPie">
+                  <dashlet id="111" xsi:type="DashletGroupByPie">
                     <rank>1</rank>
-                    <title>VMs avec OS Obsol&#xE8;te</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c1r1r1</title>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
                       ('poweredOn','') AND istemplate = '0' AND osversion_eol &lt;
                       DATE(NOW()) AND s_train MATCHES :this-&gt;s_train</query>
@@ -192,9 +209,9 @@
               <cell id="2">
                 <rank>2</rank>
                 <dashlets>
-                  <dashlet id="EOL_VM_Dash_ID_row0_col2_12" xsi:type="DashletHeaderDynamic">
+                  <dashlet id="220" xsi:type="DashletHeaderDynamic">
                     <rank>0</rank>
-                    <title>VMs avec OS Obsol&#xE8;te dans un an</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c2r2r0</title>
                     <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
                     <subtitle>Total</subtitle>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
@@ -203,9 +220,9 @@
                     <group_by>osfamily_id</group_by>
                     <values>9,154,40</values>
                   </dashlet>
-                  <dashlet id="EOL_VM_Dash_ID_row0_col2_3" xsi:type="DashletGroupByPie">
+                  <dashlet id="221" xsi:type="DashletGroupByPie">
                     <rank>1</rank>
-                    <title>VMs avec OS Obsol&#xE8;te dans un an</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c2r2r1</title>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
                       ('poweredOn','') AND istemplate = '0' AND osversion_eol &lt;
                       DATE(DATE_ADD(NOW(), INTERVAL 1 YEAR)) AND s_train MATCHES :this-&gt;s_train</query>
@@ -222,9 +239,9 @@
               <cell id="3">
                 <rank>3</rank>
                 <dashlets>
-                  <dashlet id="EOL_VM_Dash_ID_row1_col0_13" xsi:type="DashletHeaderDynamic">
+                  <dashlet id="330" xsi:type="DashletHeaderDynamic">
                     <rank>0</rank>
-                    <title>VM RedHat</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c3r3r0</title>
                     <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
                     <subtitle>Total</subtitle>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
@@ -233,9 +250,9 @@
                     <group_by>osversion_id</group_by>
                     <values>86,83,24,10,82,254,598</values>
                   </dashlet>
-                  <dashlet id="EOL_VM_Dash_ID_row1_col0_4" xsi:type="DashletGroupByPie">
+                  <dashlet id="331" xsi:type="DashletGroupByPie">
                     <rank>1</rank>
-                    <title>Parc de VM RedHat</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c3r3r1</title>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
                       ('poweredOn','') AND istemplate = '0' AND osfamily_id = 9
                       AND s_train MATCHES :this-&gt;s_train</query>
@@ -252,9 +269,9 @@
               <cell id="4">
                 <rank>4</rank>
                 <dashlets>
-                  <dashlet id="EOL_VM_Dash_ID_row1_col1_14" xsi:type="DashletHeaderDynamic">
+                  <dashlet id="440" xsi:type="DashletHeaderDynamic">
                     <rank>0</rank>
-                    <title>VM RedHat obsol&#xE8;tes</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c4r4r0</title>
                     <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
                     <subtitle>Total</subtitle>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
@@ -263,9 +280,9 @@
                     <group_by>osversion_id</group_by>
                     <values>86,83,24,10,82,254,598</values>
                   </dashlet>
-                  <dashlet id="EOL_VM_Dash_ID_row1_col1_5" xsi:type="DashletGroupByPie">
+                  <dashlet id="441" xsi:type="DashletGroupByPie">
                     <rank>1</rank>
-                    <title>VMs RedHat avec OS Obsol&#xE8;te</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c4r4r1</title>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
                       ('poweredOn','') AND istemplate = '0' AND osversion_eol &lt;
                       DATE(NOW()) AND osfamily_id = 9 AND s_train MATCHES :this-&gt;s_train</query>
@@ -282,9 +299,9 @@
               <cell id="5">
                 <rank>5</rank>
                 <dashlets>
-                  <dashlet id="EOL_VM_Dash_ID_row1_col2_15" xsi:type="DashletHeaderDynamic">
+                  <dashlet id="550" xsi:type="DashletHeaderDynamic">
                     <rank>0</rank>
-                    <title>VM RedHat obsol&#xE8;tes dans un an</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c5r5r0</title>
                     <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
                     <subtitle>Total</subtitle>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
@@ -294,9 +311,9 @@
                     <group_by>osversion_id</group_by>
                     <values>86,83,24,10,82,254,598</values>
                   </dashlet>
-                  <dashlet id="EOL_VM_Dash_ID_row1_col2_6" xsi:type="DashletGroupByPie">
+                  <dashlet id="551" xsi:type="DashletGroupByPie">
                     <rank>1</rank>
-                    <title>VMs RedHat avec OS Obsol&#xE8;te dans un an</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c5r5r1</title>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
                       ('poweredOn','') AND istemplate = '0' AND osversion_eol &lt;
                       DATE(DATE_ADD(NOW(), INTERVAL 1 YEAR)) AND osfamily_id = 9
@@ -314,9 +331,9 @@
               <cell id="6">
                 <rank>6</rank>
                 <dashlets>
-                  <dashlet id="EOL_VM_Dash_ID_row2_col0_16" xsi:type="DashletHeaderDynamic">
+                  <dashlet id="660" xsi:type="DashletHeaderDynamic">
                     <rank>0</rank>
-                    <title>VMs Windows</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c6r6r0</title>
                     <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
                     <subtitle>Total</subtitle>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
@@ -325,9 +342,9 @@
                     <group_by>osversion_id</group_by>
                     <values>383,403,382,120,119,117,477,567</values>
                   </dashlet>
-                  <dashlet id="EOL_VM_Dash_ID_row2_col0_7" xsi:type="DashletGroupByPie">
+                  <dashlet id="661" xsi:type="DashletGroupByPie">
                     <rank>1</rank>
-                    <title>Parc de VM Windows</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c6r6r1</title>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
                       ('poweredOn','') AND istemplate = '0' AND osfamily_id = 40
                       AND s_train MATCHES :this-&gt;s_train</query>
@@ -344,9 +361,9 @@
               <cell id="7">
                 <rank>7</rank>
                 <dashlets>
-                  <dashlet id="EOL_VM_Dash_ID_row2_col1_16" xsi:type="DashletHeaderDynamic">
+                  <dashlet id="770" xsi:type="DashletHeaderDynamic">
                     <rank>0</rank>
-                    <title>VMs Windows avec OS Obsol&#xE8;te</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c7r7r0</title>
                     <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
                     <subtitle>Total</subtitle>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
@@ -355,9 +372,9 @@
                     <group_by>osversion_id</group_by>
                     <values>383,403,382,120,119,117,477,567</values>
                   </dashlet>
-                  <dashlet id="EOL_VM_Dash_ID_row2_col1_8" xsi:type="DashletGroupByPie">
+                  <dashlet id="771" xsi:type="DashletGroupByPie">
                     <rank>1</rank>
-                    <title>VMs Windows avec OS Obsol&#xE8;te</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c7r7r1</title>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
                       ('poweredOn','') AND istemplate = '0' AND osversion_eol &lt;
                       DATE(NOW()) AND osfamily_id = 40 AND s_train MATCHES :this-&gt;s_train</query>
@@ -374,9 +391,9 @@
               <cell id="8">
                 <rank>8</rank>
                 <dashlets>
-                  <dashlet id="EOL_VM_Dash_ID_row2_col2_16" xsi:type="DashletHeaderDynamic">
+                  <dashlet id="880" xsi:type="DashletHeaderDynamic">
                     <rank>0</rank>
-                    <title>VMs Windows avec OS Obsol&#xE8;te dans un an</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c8r8r0</title>
                     <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
                     <subtitle>Total</subtitle>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
@@ -386,9 +403,9 @@
                     <group_by>osversion_id</group_by>
                     <values>383,403,382,120,119,117,477,567</values>
                   </dashlet>
-                  <dashlet id="EOL_VM_Dash_ID_row2_col2_9" xsi:type="DashletGroupByPie">
+                  <dashlet id="881" xsi:type="DashletGroupByPie">
                     <rank>0</rank>
-                    <title>VMs Windows avec OS Obsol&#xE8;te dans un an</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c8r8r1</title>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
                       ('poweredOn','') AND istemplate = '0' AND osversion_eol &lt;
                       DATE(DATE_ADD(NOW(), INTERVAL 1 YEAR)) AND osfamily_id = 40
@@ -406,10 +423,9 @@
               <cell id="9">
                 <rank>9</rank>
                 <dashlets>
-                  <dashlet id="CUSTOM_VMObsolescence_ID_row3_col0_18"
-                    xsi:type="DashletHeaderDynamic">
+                  <dashlet id="990" xsi:type="DashletHeaderDynamic">
                     <rank>0</rank>
-                    <title>Machines Virtuelles 'Multi-Train'</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c9r9r0</title>
                     <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
                     <subtitle>Total</subtitle>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
@@ -418,9 +434,9 @@
                     <group_by>s_train_count</group_by>
                     <values>2,3,4,5,6,7</values>
                   </dashlet>
-                  <dashlet id="CUSTOM_VMObsolescence_ID_row3_col0_17" xsi:type="DashletGroupByPie">
+                  <dashlet id="991" xsi:type="DashletGroupByPie">
                     <rank>1</rank>
-                    <title>Machines virtuelles 'Multi Trains'</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c9r9r1</title>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
                       ('poweredOn','') AND istemplate = '0' AND s_train_count &gt; 1 AND s_train
                       MATCHES :this-&gt;s_train</query>
@@ -437,10 +453,9 @@
               <cell id="10">
                 <rank>10</rank>
                 <dashlets>
-                  <dashlet id="CUSTOM_VMObsolescence_ID_row3_col1_19"
-                    xsi:type="DashletHeaderDynamic">
+                  <dashlet id="10100" xsi:type="DashletHeaderDynamic">
                     <rank>0</rank>
-                    <title>Machines Virtuelles 'Multi-Train' OS Obsolète</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c10r10r0</title>
                     <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
                     <subtitle>Total</subtitle>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
@@ -449,9 +464,9 @@
                     <group_by>s_train_count</group_by>
                     <values>2,3,4,5,6,7</values>
                   </dashlet>
-                  <dashlet id="CUSTOM_VMObsolescence_ID_row3_col1_20" xsi:type="DashletGroupByPie">
+                  <dashlet id="10101" xsi:type="DashletGroupByPie">
                     <rank>1</rank>
-                    <title>Machines virtuelles 'Multi Trains' OS Obsolète</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c10r10r1</title>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
                       ('poweredOn','') AND istemplate = '0' AND s_train_count &gt; 1 AND
                       osversion_eol &lt; DATE(NOW()) AND s_train MATCHES :this-&gt;s_train</query>
@@ -468,10 +483,9 @@
               <cell id="11">
                 <rank>11</rank>
                 <dashlets>
-                  <dashlet id="CUSTOM_VMObsolescence_ID_row3_col2_21"
-                    xsi:type="DashletHeaderDynamic">
+                  <dashlet id="11110" xsi:type="DashletHeaderDynamic">
                     <rank>0</rank>
-                    <title>Machines Virtuelles 'Multi-Train' OS Obsolète dans un an</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c11r11r0</title>
                     <icon>itop-virtualization-mgmt/images/virtualmachine.png</icon>
                     <subtitle>Total</subtitle>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
@@ -481,9 +495,9 @@
                     <group_by>s_train_count</group_by>
                     <values>2,3,4,5,6,7</values>
                   </dashlet>
-                  <dashlet id="CUSTOM_VMObsolescence_ID_row3_col2_22" xsi:type="DashletGroupByPie">
+                  <dashlet id="11111" xsi:type="DashletGroupByPie">
                     <rank>1</rank>
-                    <title>Machines virtuelles 'Multi Trains' OS Obsolète dans un an</title>
+                    <title>Class:SafeTrain/Attribute:VMObsolescence/c11r11r1</title>
                     <query>SELECT VirtualMachine WHERE status = 'production' AND power_status IN
                       ('poweredOn','') AND istemplate = '0' AND s_train_count &gt; 1 AND
                       osversion_eol &lt; DATE(DATE_ADD(NOW(), INTERVAL 1 YEAR)) AND s_train MATCHES
@@ -501,7 +515,7 @@
               <cell id="12">
                 <rank>12</rank>
                 <dashlets>
-                  <dashlet id="0" xsi:type="DashletEmptyCell">
+                  <dashlet id="12120" xsi:type="DashletEmptyCell">
                     <rank>0</rank>
                   </dashlet>
                 </dashlets>
@@ -509,7 +523,7 @@
               <cell id="13">
                 <rank>13</rank>
                 <dashlets>
-                  <dashlet id="0" xsi:type="DashletEmptyCell">
+                  <dashlet id="13130" xsi:type="DashletEmptyCell">
                     <rank>0</rank>
                   </dashlet>
                 </dashlets>
@@ -517,7 +531,7 @@
               <cell id="14">
                 <rank>14</rank>
                 <dashlets>
-                  <dashlet id="0" xsi:type="DashletEmptyCell">
+                  <dashlet id="14140" xsi:type="DashletEmptyCell">
                     <rank>0</rank>
                   </dashlet>
                 </dashlets>
@@ -543,6 +557,9 @@
             </item>
             <item id="VMObsolescencedashboard">
               <rank>110</rank>
+            </item>
+            <item id="TrainSoftwareInstance">
+              <rank>120</rank>
             </item>
           </items>
         </details>
@@ -1280,6 +1297,21 @@
         </cells>
       </definition>
     </menu>
+    <menu id="ConfigManagementOverview" xsi:type="DashboardMenuNode" _delta="must_exist">
+      <definition>
+        <cells>
+          <cell id="3" _delta="must_exist">
+            <rank>3</rank>
+            <dashlets>
+              <dashlet id="21" xsi:type="DashletBadge" _delta="define">
+                <rank>21</rank>
+                <class>Software</class>
+              </dashlet>
+            </dashlets>
+          </cell>
+        </cells>
+      </definition>
+    </menu>    
   </menus>
   <user_rights>
     <groups>
