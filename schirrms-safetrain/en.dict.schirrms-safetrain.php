@@ -9,8 +9,11 @@
 Dict::Add('EN US', 'English', 'English', array(
   // Dictionary entries go here
   'Class:FunctionalCI/Attribute:s_train' => 'SAFe Train belonging',
+  'Class:FunctionalCI/Attribute:s_train+' => 'This CI is affected to theses SAFe Trains (maximum 7)',
   'Class:FunctionalCI/Attribute:s_train_count' => 'SAFe Train(s) count',
-  'Class:FunctionalCI/Attribute:s_train_count+' => 'Number of SAFe Train(s) this CI belongs',
+  'Class:FunctionalCI/Attribute:s_train_count+' => 'Number of SAFe Train(s) this CI belongs (maximum 7)',
+  'Class:FunctionalCI/Attribute:s_train_team' => 'SAFe Train Team(s)',
+  'Class:FunctionalCI/Attribute:s_train_team+' => 'Specific team(s) in the Train using this CI (maximum 3)',
   'Class:SafeTrain' => 'SAFe Train',
   'Class:SafeTrain/Attribute:name' => 'SAFe Train Name',
   'Class:SafeTrain/Attribute:name+' => 'Should be the same SAFe Train Name as in the tags',

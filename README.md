@@ -30,3 +30,13 @@ UPDATE functionalci SET `s_train_count`= LENGTH(LTRIM(RTRIM(`s_train`))) - LENGT
 ~~~
 
 This SQL query is only to execute on an iTop instance who had previously s_train fields added. Obviously, every new changes of trains in iTop update this field.
+
+## Team(s) of the train
+
+I was asked to be able to affect more specifically a 'subteam' within the train to a device. And this is the point when you start to think that using tags was not such a creative idea…
+
+But as the usage of the Train field in iTop is not only used in iTop, but also in some integrations, changing the train attribute from a Tag to, let's say an enumerate would have been a challenge.
+
+So I choose to add another tag field, train_team, and I will implement some php logic to control this field (hopefuly 🙂)
+
+This is where the 0.4.x branch starts.

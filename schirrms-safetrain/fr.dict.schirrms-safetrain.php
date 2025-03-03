@@ -9,8 +9,11 @@
  Dict::Add('FR FR', 'French', 'French', array(
   // Dictionary entries go here
   'Class:FunctionalCI/Attribute:s_train' => 'Membre du/des Train(s) SAFe',
+  'Class:FunctionalCI/Attribute:s_train+' => 'Ce CI est affecté au(x) Train(s) SAFe (maximum 7)',
   'Class:FunctionalCI/Attribute:s_train_count' => 'Nombre de Train SAFE',
-  'Class:FunctionalCI/Attribute:s_train_count+' => 'Nombre de Train SAFE dont ce CI est membre',
+  'Class:FunctionalCI/Attribute:s_train_count+' => 'Nombre de Train SAFE dont ce CI est membre (maximum 7)',
+  'Class:FunctionalCI/Attribute:s_train_team' => 'Équipe(s) dans ce Train SAFe',
+  'Class:FunctionalCI/Attribute:s_train_team+' => 'Équipe(s) plus spécifiquement en charge au sein de ce Train SAFe (maximum 3)',
   'Class:SafeTrain' => 'Train SAFe',
   'Class:SafeTrain/Attribute:name' => 'Nom du train SAFe',
   'Class:SafeTrain/Attribute:name+' => 'Devrait être le même nom que le nom du train dans les étiquettes',
