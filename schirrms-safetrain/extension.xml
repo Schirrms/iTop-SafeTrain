@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension format="1.0">
   <extension_code>schirrms-safetrain</extension_code>
-  <version>0.4.0</version>
+  <version>0.4.1</version>
   <label><![CDATA[Add a 'SAFe Train' field to Functional CIs And a 'Train' Class]]></label>
   <description><![CDATA[Adds a 'SAFe Train' Tag to FunctionalCI, allowing a CI to be member of several Trains]]></description>
   <mandatory>false</mandatory>

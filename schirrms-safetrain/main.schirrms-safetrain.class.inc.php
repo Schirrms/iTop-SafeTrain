@@ -57,6 +57,34 @@ class SafeTrainFunct
         $iSafeTrainCount = substr_count($sSafeTrain, ' ') + 1;
       }
       $oDevice->Set('s_train_count', $iSafeTrainCount);
+      // remove any train_team outside of train list
+      $sNewSafeTrainTeam = '';
+      if (isset($sSafeTrain) && $sSafeTrain != '') {
+        $sSafeTrainTeam = trim($oDevice->Get('s_train_team'));
+        // iterate the train team list, if not empty
+        if ($sSafeTrainTeam != '') {
+          $aSafeTrainTeam = explode(' ', $sSafeTrainTeam);
+          foreach ($aSafeTrainTeam as $sTeam) {
+            // check if the train is still in the train list
+            // ie, is the value Uppercase until a letter 'o' in the train list
+            $iLetterOPos = strpos($sTeam, 'o');
+            if ($iLetterOPos !== false and $iLetterOPos > 2) {
+              // Extract the train code
+              $sTeamSubstr = substr($sTeam, 0, $iLetterOPos);
+              // check if the train code is in the train list
+              if (strpos($sSafeTrain, $sTeamSubstr) !== false) {
+                $sNewSafeTrainTeam .= $sTeam . ' ';
+              }
+            }
+          }
+        }
+        // remove the last space
+        $sNewSafeTrainTeam = rtrim($sNewSafeTrainTeam);
+        // remove any ',' in the string
+        $sNewSafeTrainTeam = str_replace(',', '', $sNewSafeTrainTeam);
+      }
+      $oDevice->Set('s_train_team', $sNewSafeTrainTeam);
+      
       // don't forget the DBUpdate...
       $oDevice->DBUpdate();
     }
