@@ -5,7 +5,7 @@
 
 SetupWebPage::AddModule(
 	__FILE__, // Path to the current file, all other file names are relative to the directory containing this file
-	'schirrms-safetrain/0.4.2',
+	'schirrms-safetrain/0.5.0',
 	array(
 		// Identification
 		//
@@ -15,9 +15,9 @@ SetupWebPage::AddModule(
 		// Setup
 		//
 		'dependencies' => array(
-			'itop-config-mgmt/2.7.0',
-			'itop-virtualization-mgmt/2.7.0',
-			'itop-storage-mgmt/2.7.0',
+			'itop-config-mgmt/3.2.0',
+			'itop-virtualization-mgmt/3.2.0',
+			'itop-storage-mgmt/3.2.0',
 			'schirrms-generic-connection/0.8.0',
 			'schirrms-middleware-web-extensions/0.2.0',
 			'schirrms-loadbalancer/0.0.1',

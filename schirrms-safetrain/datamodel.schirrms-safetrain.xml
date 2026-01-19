@@ -1,7 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.7">
+<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0">
   <constants>
   </constants>
+  <snippets>
+    <snippet id="StaticMethodsForWebhooks" _delta="define">
+      <placement>core</placement>
+      <rank>1</rank>
+      <content><![CDATA[
+class VMwareCallbackClass
+{
+  // This function is here to prepare data to send to the webhook
+  // This snippet is probably highly specific for our company use case
+  public static function PrepareCustomAttributes(
+    \DBObject $oObject,
+    array $aContextArgs,
+    \EventNotification $oLog,
+    \ActionWebhook $oAction
+  )
+  {
+    // 1) Get "Raw" values from the object
+    $sName     = (string) $oObject->Get('name');
+    $sVcenter  = (string) $oObject->Get('vcenter');
+    $sUuid     = (string) $oObject->Get('S_UUID');
+    $sSeq      = (string) $oObject->Get('sequencenumber');
+    $sTrain    = (string) $oObject->Get('s_train');
+    $sComment  = (string) $oObject->Get('S_Comment');
+
+    // 2) Build the PHP array structure
+    $payload = array(
+      'name'    => $sName,
+      'vcenter' => $sVcenter,
+      'uuid'    => $sUuid,
+      'cas'     => array(
+        'S_PRI_BOOT_SEQUENCE' => $sSeq,
+        'S_TRAIN'             => $sTrain,
+        'S_COMMENT'           => $sComment,
+      ),
+    );
+
+    // 3) Robust JSON encoding
+    $json = json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_SUBSTITUTE);
+    if ($json === false) {
+      IssueLog::Error('VMware PrepareCustomAttributes: json_encode failed: '.json_last_error_msg());
+      $json = '{"error":"json_encode_failed"}';
+    }
+
+    // 4) Return the body (raw "string" version = the simplest)
+    return $json;
+  }
+}
+]]></content>
+    </snippet>
+  </snippets>
   <classes>
     <class id="FunctionalCI" _delta="must_exist">
       <fields>
@@ -143,8 +193,8 @@
                   <dashlet id="1" xsi:type="DashletObjectList">
                     <rank>0</rank>
                     <title>Class:SafeTrain/Attribute:TrainSoftwareInstance/cell0</title>
-                    <query>SELECT Software FROM SoftwareInstance AS Software 
-                           JOIN FunctionalCI AS CI ON Software.system_id = CI.id 
+                    <query>SELECT Software FROM SoftwareInstance AS Software
+                           JOIN FunctionalCI AS CI ON Software.system_id = CI.id
                            WHERE CI.s_train MATCHES :this-&gt;s_train</query>
                     <menu>true</menu>
                   </dashlet>
@@ -1522,7 +1572,7 @@
           </cell>
         </cells>
       </definition>
-    </menu>    
+    </menu>
   </menus>
   <user_rights>
     <groups>
