@@ -124,7 +124,9 @@ class VMwareCallbackClass
           </attributes>
         </naming>
         <display_template />
-        <icon>assets/img/safetrain48.svg</icon>
+        <style>
+          <icon>assets/img/safetrain48.svg</icon>
+        </style>
         <reconciliation>
           <attributes>
             <attribute id="name" />

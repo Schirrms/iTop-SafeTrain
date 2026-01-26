@@ -5,7 +5,7 @@
 
 SetupWebPage::AddModule(
 	__FILE__, // Path to the current file, all other file names are relative to the directory containing this file
-	'schirrms-safetrain/0.5.0',
+	'schirrms-safetrain/0.5.1',
 	array(
 		// Identification
 		//
